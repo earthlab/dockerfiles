@@ -11,7 +11,7 @@ docker pull earthlab/spatial-r
 docker run -i -t earthlab/spatial-r /bin/bash
 ```    
 
-To use the Jupyter notebook:
+To use Rstudio:
 
 ```
 docker run -d -p 8787:8787 earthlab/spatial-r
