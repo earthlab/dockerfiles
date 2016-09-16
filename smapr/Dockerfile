@@ -1,6 +1,6 @@
 FROM rocker/ropensci
 
-MAINTAINER Max Joseph <maxwell.b.joseph@colorado.edu>
+MAINTAINER Max Joseph maxwell.b.joseph@colorado.edu
 
 RUN apt-get update && apt-get -y install nano gdal-bin libgdal-dev libproj-dev libhdf5-10 groff
 

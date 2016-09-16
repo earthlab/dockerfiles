@@ -1,6 +1,6 @@
 FROM continuumio/anaconda3
 
-MAINTAINER  Max Joseph <maxwell.b.joseph@colorado.edu>
+MAINTAINER  Max Joseph maxwell.b.joseph@colorado.edu
 
 RUN apt-get update
 
