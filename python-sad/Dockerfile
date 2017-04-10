@@ -11,4 +11,10 @@ RUN apt-get update && \
 USER $NB_USER
 
 RUN conda install --quiet --yes \
-    'ipyparallel'
+    'ipyparallel' \
+    'pandas'
+
+RUN conda install -c conda-forge \
+    'gdal=2.1.3' \
+    'awscli'
+
