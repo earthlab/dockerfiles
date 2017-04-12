@@ -18,5 +18,5 @@ RUN conda install -c conda-forge \
     'gdal=2.1.3' \
     'awscli'
 
-RUN conda install -c unidata metpy=0.5.0
+RUN conda install -c jochym natgrid=0.2
 
