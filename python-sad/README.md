@@ -1,6 +1,6 @@
 # python-sad
 
-Docker container with [Anaconda](http://continuum.io/downloads) (based on Python 3.5) and a set of packages for spatial adjusted distance calculations.
+Docker container with [Anaconda](http://continuum.io/downloads) and a set of packages for spatial adjusted distance calculations.
 
 ## How to use
 
