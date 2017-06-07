@@ -10,5 +10,13 @@ RUN apt-get update && \
     
 USER $NB_USER
 
-RUN conda install --quiet --yes \
-    'ipyparallel'
+RUN conda install -n python2 --quiet --yes \
+    'ipyparallel' \
+    'pandas'
+
+RUN conda install -n python2 -c conda-forge \
+    'gdal=2.1.3' \
+    'awscli'
+
+RUN conda install -n python2 -c jochym natgrid=0.2
+
