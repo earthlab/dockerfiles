@@ -10,6 +10,9 @@ RUN apt-get update && \
     
 USER $NB_USER
 
+RUN conda install ipyparallel && \
+    ipcluster nbextension enable --user
+
 RUN conda install -n python2 --quiet --yes \
     'ipyparallel' \
     'pandas'
