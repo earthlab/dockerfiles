@@ -51,6 +51,8 @@ RUN apt-get update \
     && R -e "source('https://bioconductor.org/biocLite.R'); biocLite('BiocInstaller')" \
     && R -e "BiocInstaller::biocLite('rhdf5')"
 
+RUN install2.r --error doParallel
+
 EXPOSE 8787
 
 CMD ["/init"]
