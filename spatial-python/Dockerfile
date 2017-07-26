@@ -1,12 +1,28 @@
-FROM continuumio/anaconda3
+FROM jupyter/scipy-notebook
 
-MAINTAINER  Max Joseph maxwell.b.joseph@colorado.edu
+MAINTAINER Max Joseph <maxwell.b.joseph@colorado.edu>
 
-RUN apt-get update
+USER root
 
-RUN conda config --set always_yes true \
-  && conda install basemap h5py mpi4py netcdf4 pysal six \
-  && conda install -c ioos descartes folium \
-  && pip install usgs
+RUN apt-get update && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+    
+USER $NB_USER
 
-CMD [ "/bin/bash" ]
+RUN conda install ipyparallel && \
+    ipcluster nbextension enable --user
+
+RUN conda install --quiet --yes \
+    'ipyparallel' \
+    'pandas' \ 
+    'basemap' \
+    'h5py' \
+    'netcdf4' \
+    'pysal'
+
+RUN conda install -c conda-forge \
+    'gdal=2.1.3' \
+    'geopandas' \
+    'awscli' 
+
