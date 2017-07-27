@@ -2,7 +2,8 @@ FROM gcr.io/tensorflow/tensorflow:latest-gpu-py3
 
 MAINTAINER Max Joseph <maxwell.b.joseph@colorado.edu>
 
-RUN apt-get update && \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	git && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
