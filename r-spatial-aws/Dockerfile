@@ -21,13 +21,14 @@ RUN apt-get update \
     libudunits2-dev \
     python-pip \
     tk-dev \
-    unixodbc-dev \
-  && pip install awscli \
-  && install2.r --error \
+    unixodbc-dev
+
+RUN install2.r --error \
     RColorBrewer \
     RandomFields \
     classInt \
     deldir \
+    doParallel \
     gstat \
     lidR \
     mapdata \
@@ -48,10 +49,11 @@ RUN apt-get update \
     geoR \
     geosphere \
     ## from bioconductor
-    && R -e "source('https://bioconductor.org/biocLite.R'); biocLite('BiocInstaller')" \
-    && R -e "BiocInstaller::biocLite('rhdf5')"
+  && R -e "source('https://bioconductor.org/biocLite.R'); biocLite('BiocInstaller')" \
+  && R -e "BiocInstaller::biocLite('rhdf5')"
 
-RUN install2.r --error doParallel
+RUN pip install wheel \ 
+  && pip install awscli
 
 EXPOSE 8787
 
