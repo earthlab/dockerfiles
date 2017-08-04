@@ -1,0 +1,50 @@
+FROM earthlab/r-spatial-aws
+
+MAINTAINER Max Joseph <maxwell.b.joseph@colorado.edu>
+
+# much borrowed from rocker/geospatial and jzelner/docker-rstan Dockerfiles
+RUN apt-get update \ 
+	&& apt-get install -y --no-install-recommends \
+                   clang-3.9
+
+RUN ln -s /usr/bin/clang++-3.9 /usr/bin/clang++ \
+    && ln -s /usr/bin/clang-3.9 /usr/bin/clang
+
+# Global site-wide config
+RUN mkdir -p $HOME/.R/ \
+    && echo "\nCXX=clang++ -ftemplate-depth-256\n" >> $HOME/.R/Makevars \
+    && echo "CC=clang\n" >> $HOME/.R/Makevars
+
+# Install rstan
+RUN install2.r --error \
+    inline \
+    RcppEigen \
+    StanHeaders \
+    rstan \
+    KernSmooth
+
+# Config for rstudio user
+RUN mkdir -p /home/rstudio/.R/ \
+    && echo "\nCXX=clang++ -ftemplate-depth-256\n" >> /home/rstudio/.R/Makevars \
+    && echo "CC=clang\n" >> /home/rstudio/.R/Makevars \
+    && echo "CXXFLAGS=-O3\n" >> /home/rstudio/.R/Makevars \
+    && echo "\nrstan::rstan_options(auto_write = TRUE)" >> /home/rstudio/.Rprofile \
+    && echo "options(mc.cores = parallel::detectCores())" >> /home/rstudio/.Rprofile
+
+RUN install2.r --error \
+    assertthat \
+    cowplot \
+    clusterGeneration \
+    foreign \
+    gridExtra \
+    lubridate \
+    purrr \ 
+    reshape2 \
+    RSQLite \
+    rasterVis \
+    viridis
+
+EXPOSE 8787
+
+CMD ["/init"]
+
