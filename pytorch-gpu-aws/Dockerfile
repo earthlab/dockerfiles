@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN pip install http://download.pytorch.org/whl/cu80/torch-0.1.12.post2-cp35-cp35m-linux_x86_64.whl && \
+RUN pip install http://download.pytorch.org/whl/cu80/torch-0.2.0.post1-cp35-cp35m-manylinux1_x86_64.whl  && \
 	pip install torchvision pandas && \
 	pip install awscli
 
