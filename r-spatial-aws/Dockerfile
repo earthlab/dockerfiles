@@ -24,12 +24,14 @@ RUN apt-get update \
     unixodbc-dev
 
 RUN install2.r --error \
+    assertthat \
     RColorBrewer \
     RandomFields \
     classInt \
     deldir \
     doParallel \
     gstat \
+    httr \
     lidR \
     mapdata \
     maptools \
