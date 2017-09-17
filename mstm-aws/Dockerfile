@@ -5,7 +5,10 @@ MAINTAINER Max Joseph <maxwell.b.joseph@colorado.edu>
 # much borrowed from rocker/geospatial and jzelner/docker-rstan Dockerfiles
 RUN apt-get update \ 
 	&& apt-get install -y --no-install-recommends \
-                   clang-3.9
+		   libprotobuf-dev \
+		   protobuf-compiler \
+                   clang-3.9 \ 
+		   libv8-3.14-dev
 
 RUN ln -s /usr/bin/clang++-3.9 /usr/bin/clang++ \
     && ln -s /usr/bin/clang-3.9 /usr/bin/clang
@@ -33,13 +36,17 @@ RUN mkdir -p /home/rstudio/.R/ \
 
 RUN install2.r --error \
     assertthat \
+    corrplot \
     cowplot \
     clusterGeneration \
     foreign \
+    ggmap \
+    ggrepel \
     gridExtra \
     lubridate \
     purrr \ 
     reshape2 \
+    rmapshaper \
     RSQLite \
     rasterVis \
     viridis
