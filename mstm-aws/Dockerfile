@@ -8,7 +8,12 @@ RUN apt-get update \
 		   libprotobuf-dev \
 		   protobuf-compiler \
                    clang-3.9 \ 
-		   libv8-3.14-dev
+		   libv8-3.14-dev \
+		   libjq-dev \
+		   libv8-3.14-dev \
+		   libprotobuf-dev \
+		   protobuf-compiler \
+		   libssh2-1-dev
 
 RUN ln -s /usr/bin/clang++-3.9 /usr/bin/clang++ \
     && ln -s /usr/bin/clang-3.9 /usr/bin/clang
@@ -39,11 +44,15 @@ RUN install2.r --error \
     corrplot \
     cowplot \
     clusterGeneration \
+    devtools \
     foreign \
     ggmap \
+    ggthemes \
     ggrepel \
     gridExtra \
+    HDInterval \
     lubridate \
+    modeest \
     purrr \ 
     reshape2 \
     rmapshaper \
