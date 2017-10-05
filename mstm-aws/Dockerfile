@@ -58,6 +58,7 @@ RUN install2.r --error \
     rmapshaper \
     RSQLite \
     rasterVis \
+    snowfall \
     viridis
 
 EXPOSE 8787
