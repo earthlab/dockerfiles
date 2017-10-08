@@ -5,9 +5,7 @@ MAINTAINER Max Joseph <maxwell.b.joseph@colorado.edu>
 # much borrowed from rocker/geospatial and jzelner/docker-rstan Dockerfiles
 RUN apt-get update \ 
 	&& apt-get install -y --no-install-recommends \
-		   libprotobuf-dev \
-		   protobuf-compiler \
-                   clang-3.9 \ 
+	           clang-3.9 \ 
 		   libv8-3.14-dev \
 		   libjq-dev \
 		   libv8-3.14-dev \
@@ -60,6 +58,11 @@ RUN install2.r --error \
     rasterVis \
     snowfall \
     viridis
+
+RUN apt-get install -y \
+	gdal-bin \
+	python-gdal \
+	python3-gdal
 
 EXPOSE 8787
 
