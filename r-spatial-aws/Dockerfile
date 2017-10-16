@@ -30,6 +30,7 @@ RUN install2.r --error \
     classInt \
     deldir \
     doParallel \
+    ggthemes \
     gstat \
     httr \
     lidR \
@@ -39,6 +40,7 @@ RUN install2.r --error \
     ncdf4 \
     proj4 \
     raster \
+    rasterVis \
     rgdal \
     rgeos \
     rlas \
@@ -47,7 +49,9 @@ RUN install2.r --error \
     spacetime \
     spatstat \
     spdep \
+    snowfall \
     tidyverse \
+    viridis \
     geoR \
     geosphere \
     ## from bioconductor
