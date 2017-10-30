@@ -49,6 +49,7 @@ RUN install2.r --error \
     ggrepel \
     gridExtra \
     HDInterval \
+    loo \
     lubridate \
     modeest \
     purrr \ 
