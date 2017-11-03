@@ -41,6 +41,7 @@ RUN install2.r --error \
     proj4 \
     raster \
     rasterVis \
+    RCurl \
     rgdal \
     rgeos \
     rlas \
