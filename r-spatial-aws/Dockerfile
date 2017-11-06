@@ -17,6 +17,7 @@ RUN apt-get update \
     libproj-dev \
     libnetcdf-dev \
     libsqlite3-dev \
+    libssh2-1-dev \
     libssl-dev \
     libudunits2-dev \
     python-pip \
@@ -37,6 +38,7 @@ RUN install2.r --error \
     mapdata \
     maptools \
     mapview \
+    MODIS \
     ncdf4 \
     proj4 \
     raster \
