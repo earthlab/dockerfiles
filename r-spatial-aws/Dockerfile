@@ -4,6 +4,7 @@ FROM rocker/rstudio:latest
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
+    gdal-bin \
     lbzip2 \
     libfftw3-dev \
     libgdal-dev \
