@@ -43,6 +43,7 @@ RUN install2.r --error \
     cowplot \
     clusterGeneration \
     devtools \
+    extraDistr \
     foreign \
     ggmap \
     ggthemes \
