@@ -66,6 +66,8 @@ RUN apt-get install -y \
 	python-gdal \
 	python3-gdal
 
+RUN R -e "devtools::install_github('thomasp85/patchwork')"
+
 EXPOSE 8787
 
 CMD ["/init"]
