@@ -9,6 +9,11 @@ RUN apt-get update -qq \
 ENV USE_SETUPCFG=0
 
 # install dependencies from python packages
+
+RUN conda install --yes -c conda-forge \
+  geopandas \
+  osmnx \
+
 RUN pip --no-cache-dir install \
     awscli \
     geopandas \
@@ -16,7 +21,6 @@ RUN pip --no-cache-dir install \
     netCDF4 \
     networkx \
     numpy \
-    osmnx \
     pandas \
     pysal \
     seaborn \
@@ -28,4 +32,3 @@ WORKDIR "/notebook/"
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD [ "jupyter", "notebook", "--ip=0.0.0.0", "--allow-root" ]
-
