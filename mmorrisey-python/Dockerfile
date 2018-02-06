@@ -16,7 +16,6 @@ RUN conda install --yes -c conda-forge \
 
 RUN pip --no-cache-dir install \
     awscli \
-    geopandas \
     matplotlib \
     netCDF4 \
     networkx \
