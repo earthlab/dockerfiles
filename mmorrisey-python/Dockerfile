@@ -12,7 +12,7 @@ ENV USE_SETUPCFG=0
 
 RUN conda install --yes -c conda-forge \
   geopandas \
-  osmnx \
+  osmnx 
 
 RUN pip --no-cache-dir install \
     awscli \
