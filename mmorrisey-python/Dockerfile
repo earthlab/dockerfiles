@@ -9,24 +9,19 @@ RUN apt-get update -qq \
 ENV USE_SETUPCFG=0
 
 # install dependencies from python packages
-
-RUN conda install --yes -c conda-forge \
-  numpy \
-  matplotlib \
-  seaborn \
-  geopandas \
-  pysal \
-  osmnx
-
 RUN pip --no-cache-dir install \
     awscli \
+    geopandas \
+    matplotlib \
     netCDF4 \
     networkx \
+    numpy \
+    osmnx \
     pandas \
     pysal \
     seaborn \
     sklearn
-
+ 
 EXPOSE 8888
 
 WORKDIR "/notebook/"
