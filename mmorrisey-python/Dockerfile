@@ -11,11 +11,9 @@ ENV USE_SETUPCFG=0
 # install dependencies from python packages
 
 RUN conda install --yes -c conda-forge \
-
   numpy \
   matplotlib \
   seaborn \
-
   geopandas \
   pysal \
   osmnx
