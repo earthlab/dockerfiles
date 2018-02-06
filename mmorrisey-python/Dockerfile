@@ -11,15 +11,19 @@ ENV USE_SETUPCFG=0
 # install dependencies from python packages
 
 RUN conda install --yes -c conda-forge \
+
+  numpy \
+  matplotlib \
+  seaborn \
+
   geopandas \
-  osmnx 
+  pysal \
+  osmnx
 
 RUN pip --no-cache-dir install \
     awscli \
-    matplotlib \
     netCDF4 \
     networkx \
-    numpy \
     pandas \
     pysal \
     seaborn \
