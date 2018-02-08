@@ -6,7 +6,7 @@ RUN apt-get update && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN pip install tweepy nltk gensim xlrd
+RUN pip install tweepy nltk gensim xlrd botometer
 
 RUN git clone https://github.com/facebookresearch/fastText.git && \
 	cd fastText && \
