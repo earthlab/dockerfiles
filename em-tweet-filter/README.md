@@ -2,7 +2,7 @@
 
 Docker container with Python 3.5, Pytorch, NVIDIA drivers, and the Amazon Web Services command line interface.
 
-This also contains tweepy, NLTK, fastText, and gensim.
+This also contains some API libraries (`tweepy`, `botometer`), NLP libraries (`NLTK`, `fastText`, and `gensim`), and a library to handle excel spreadsheets (`xlrd`).
 
 ## How to use
 
