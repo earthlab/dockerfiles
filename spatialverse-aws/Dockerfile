@@ -18,6 +18,7 @@ RUN apt-get update \
     libssl-dev \
     libudunits2-dev \
     python-pip \
+    texlive-fonts-extra \
     texlive-latex-extra \
     tk-dev \
     unixodbc-dev
