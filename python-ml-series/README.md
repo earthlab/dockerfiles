@@ -1,4 +1,4 @@
-# spatial-python
+# python-ml-series
 
 Docker container with basic data science and NLP packages for python (3.6+).
 
