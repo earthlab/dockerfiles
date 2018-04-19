@@ -43,17 +43,21 @@ RUN install2.r --error \
     cowplot \
     clusterGeneration \
     devtools \
+    elevatr \
     extraDistr \
     foreign \
     ggmap \
     ggthemes \
     ggrepel \
     gridExtra \
+    ggridges \    
     HDInterval \
+    hrbrthemes \
     loo \
     lubridate \
     modeest \
     purrr \ 
+    RCurl \
     reshape2 \
     rmapshaper \
     RSQLite \
