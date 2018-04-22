@@ -56,6 +56,7 @@ RUN install2.r --error \
     loo \
     lubridate \
     modeest \
+    pbapply \
     purrr \ 
     RCurl \
     reshape2 \
