@@ -1,12 +1,11 @@
-FROM rocker/hadleyverse:latest
-
-# much below is from the rocker/geospatial Dockerfile
+FROM rocker/tidyverse:latest
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     gdal-bin \
     lbzip2 \
     libfftw3-dev \
+    libgdal-dev \
     libgl1-mesa-dev \
     libglu1-mesa-dev \
     libhdf4-alt-dev \
