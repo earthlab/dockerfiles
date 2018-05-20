@@ -19,6 +19,8 @@ You can then view the Jupyter Notebook by opening `http://localhost:8888` in you
 
 When trying to run this image from a newly launched EC2 instance, there is a host of problems which I did not find immediately intuitive. The following aims to help with those problems - primarily for [me](https://github.com/jdiaz4302/) when I encounter them in the future, however feel free to request assistance.
 
+Also: make sure your EC2 instance has 8888 port access
+
 ### Set up
 
 1. To have sudo authority - `sudo su`
