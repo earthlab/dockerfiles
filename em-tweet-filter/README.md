@@ -21,11 +21,15 @@ When trying to run this image from a newly launched EC2 instance, there is a hos
 
 Also: make sure your EC2 instance has 8888 port access
 
+Note: The following are meant to be run in order (i.e. Set up -> To fix nvidia problems -> to reinstall docker...)
+
+Also note: this is all expected to be run with the **earthlab-nvidia-docker** Amazon Machine Image (AMI)
+
 ### Set up
 
 1. To have sudo authority - `sudo su`
-2. Update everything - `sudo apt-get upgrade`
-3. When prompted with selection menus, keep all
+2. Update everything - `sudo apt-get upgrade` (sometimes this seems to fail for no apparent reason, try repeating)
+3. When prompted with selection menus, "Keep local..."
 
 ### To fix nvidia problems
 
@@ -53,7 +57,7 @@ Huge thanks to: https://www.digitalocean.com/community/tutorials/how-to-install-
 Nvidia-docker gets removed in the above steps, so this is adding it back
 
 1. Precautiously removing current nvidia-docker - `docker volume ls -q -f driver=nvidia-docker | xargs -r -I{} -n1 docker ps -q -a -f volume={} | xargs -r docker rm -f`
-2. Precaution ontinued... - `sudo apt-get purge -y nvidia-docker`
+2. Precaution ontinued... - `sudo apt-get purge -y nvidia-docker` (it's okay if this can't locate nvidia-docker)
 3. Repo set up - `curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \`
 4. Repo continued... - `  sudo apt-key add -`
 5. Repo continued... - `distribution=$(. /etc/os-release;echo $ID$VERSION_ID)`
@@ -64,3 +68,5 @@ Nvidia-docker gets removed in the above steps, so this is adding it back
 10. Reloading config - `sudo pkill -SIGHUP dockerd`
 
 Huge thanks to: https://github.com/NVIDIA/nvidia-docker#ubuntu-distributions
+
+And now you should be able to run `nvidia-docker run -it -p 8888:8888 earthlab/em-tweet-filter`!
