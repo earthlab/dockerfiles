@@ -4,6 +4,8 @@ Docker container with Python 3.5, Pytorch, NVIDIA drivers, and the Amazon Web Se
 
 This also contains some API libraries (`tweepy`, `botometer`), NLP libraries (`NLTK`, `fastText`, and `gensim`), and a library to handle excel spreadsheets (`xlrd`).
 
+Also, a handy library for live-plotting loss curves (`livelossplot`)
+
 ## How to use
 
 This image requires that the NVIDIA drivers and nvidia-docker are installed on the host machine. 
@@ -15,6 +17,7 @@ nvidia-docker run -it -p 8888:8888 earthlab/em-tweet-filter
 
 You can then view the Jupyter Notebook by opening `http://localhost:8888` in your web browser.<br><br><br>
 
+# For p2 instances (the weaker GPUs) -- (p3 further below)
 ## But AWS is causing so many problems! AWS giveth & AWS taketh away: Fixes for the unsavories
 
 When trying to run this image from a newly launched EC2 instance, there is a host of problems which I did not find immediately intuitive. The following aims to help with those problems - primarily for [me](https://github.com/jdiaz4302/) when I encounter them in the future, however feel free to request assistance.
@@ -70,3 +73,12 @@ Nvidia-docker gets removed in the above steps, so this is adding it back
 Huge thanks to: https://github.com/NVIDIA/nvidia-docker#ubuntu-distributions
 
 And now you should be able to run `nvidia-docker run -it -p 8888:8888 earthlab/em-tweet-filter`!
+
+# p3 instances (stronger GPU)
+
+The p3-instance process is much simpler. This docker image can be sucessfully used by only:
+
+1. Using the community AMI: **Deep Learning AMI (Ubuntu) Version 9.0**
+2. Launching the image (`nvidia-docker run -it -p 8888:8888 earthlab/em-tweet-filter`) from within the instance
+3. Installing PyTorch 0.4.0 with the proper CUDA version inside the Docker image by...
+4. `pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.0-cp35-cp35m-linux_x86_64.whl`
