@@ -15,7 +15,6 @@ RUN conda install ipyparallel && \
     ipcluster nbextension enable --user
 
 RUN conda install --yes \
-    'ipyparallel' \
     'pandas' \ 
     'basemap' \
     'h5py' \
