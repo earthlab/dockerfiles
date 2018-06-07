@@ -1,4 +1,4 @@
-FROM earthlab/pytorch-gpu-aws
+FROM pytorch/pytorch
 
 MAINTAINER Jeremy Diaz <jeremy.diaz@colorado.edu>
 
@@ -6,7 +6,7 @@ RUN apt-get update && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN pip install tweepy nltk gensim xlrd botometer livelossplot
+RUN pip install jupyter tweepy nltk gensim xlrd botometer livelossplot
 
 RUN git clone https://github.com/facebookresearch/fastText.git && \
 	cd fastText && \
