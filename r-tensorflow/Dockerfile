@@ -34,13 +34,16 @@ RUN pip --no-cache-dir install \
         && \
     python -m ipykernel.kernelspec
 
-RUN pip --no-cache-dir install \
-  --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0rc0-cp27-none-linux_x86_64.whl
-
 RUN install2.r --error \
     devtools
     
 RUN R -e "devtools::install_github('rstudio/tensorflow')"
 
-CMD ["/init"]
+RUN pip install virtualenv
+
+USER rstudio
+
+RUN R -e "tensorflow::install_tensorflow()"
+
+USER root
 
