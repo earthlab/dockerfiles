@@ -1,12 +1,27 @@
-FROM pytorch/pytorch
+FROM tensorflow/tensorflow:1.9.0-rc0-gpu-py3
 
 MAINTAINER Jeremy Diaz <jeremy.diaz@colorado.edu>
 
-RUN apt-get update && \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	git \
+	libtcmalloc-minimal4 && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN pip install jupyter tweepy nltk gensim xlrd botometer livelossplot
+ENV LD_PRELOAD /usr/lib/libtcmalloc_minimal.so.4
+
+RUN pip3 install awscli \
+	botometer \
+	gensim \
+	livelossplot \
+	nltk \
+	pandas \
+	pybind11 \
+	scikit-learn \
+	scipy \
+	torch \
+	tweepy \
+	xlrd
 
 RUN git clone https://github.com/facebookresearch/fastText.git && \
 	cd fastText && \
@@ -17,3 +32,4 @@ EXPOSE 8888
 WORKDIR "/home/"
 
 CMD ["/run_jupyter.sh", "--allow-root"]
+
