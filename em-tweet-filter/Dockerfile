@@ -23,13 +23,13 @@ RUN pip3 install awscli \
 	tweepy \
 	xlrd
 
+WORKDIR "/home/"
+
 RUN git clone https://github.com/facebookresearch/fastText.git && \
 	cd fastText && \
 	pip install .
 
 EXPOSE 8888
-
-WORKDIR "/home/"
 
 CMD ["/run_jupyter.sh", "--allow-root"]
 
