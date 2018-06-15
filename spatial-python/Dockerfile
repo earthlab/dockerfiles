@@ -11,22 +11,19 @@ RUN apt-get update && \
     
 USER $NB_USER
 
-RUN conda install ipyparallel && \
-    ipcluster nbextension enable --user
-
-RUN conda install --yes \
-    'pandas' \ 
+RUN conda install --yes -c conda-forge \
+    'awscli' \
     'basemap' \
+    'cartopy' \
+    'gdal' \
+    'geopandas' \
     'h5py' \
+    'ipyparallel ' \
+    'landsat_util' \
     'netcdf4' \
+    'pandas' \
     'pysal'
 
-RUN conda install --yes -c conda-forge \
-    'cartopy' \
-    'gdal=2.1.3' \
-    'geopandas' \
-    'awscli' 
-
-RUN pip install git+https://github.com/developmentseed/landsat-util.git
+RUN ipcluster nbextension enable --user
 
 
