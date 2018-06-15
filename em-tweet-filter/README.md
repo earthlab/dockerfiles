@@ -12,7 +12,7 @@ This image requires that the NVIDIA drivers and nvidia-docker are installed on t
 To run, the image and interface with the Jupyter Notebook:
 
 ```
-nvidia-docker run -it -p 8888:8888 earthlab/em-tweet-filter
+nvidia-docker run -it -p 8888:8888 --hostname localhost earthlab/em-tweet-filter
 ```    
 
 You can then view the Jupyter Notebook by opening `http://localhost:8888` in your web browser.<br><br><br>
