@@ -60,6 +60,19 @@ RUN install2.r --error \
 RUN pip install wheel \ 
   && pip install awscli
 
+# install wgrib2
+RUN wget ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz && \
+  tar -xzvf wgrib2.tgz
+
+WORKDIR grib2
+
+RUN export CC=gcc && \
+  export FC=gfortran && \
+  make && \
+  make lib 
+
+RUN install2.r --error rNOMADS
+
 EXPOSE 8787
 
 CMD ["/init"]
