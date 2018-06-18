@@ -61,15 +61,15 @@ RUN pip install wheel \
   && pip install awscli
 
 # install wgrib2
-RUN wget ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz && \
-  tar -xzvf wgrib2.tgz
-
-WORKDIR grib2
-
-RUN export CC=gcc && \
-  export FC=gfortran && \
-  make && \
-  make lib 
+RUN wget ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz.v2.0.4 -O /tmp/wgrib2.tgz && \
+	mkdir -p /usr/local/grib2/ && \
+	cd /tmp/ && \
+        tar -xf /tmp/wgrib2.tgz && \
+        rm -r /tmp/wgrib2.tgz && \
+        mv /tmp/grib2/ /usr/local/grib2/ &&\
+        cd /usr/local/grib2/grib2 && \
+        make && \
+	ln -s /usr/local/grib2/grib2/wgrib2/wgrib2 /usr/local/bin/wgrib2
 
 RUN install2.r --error rNOMADS
 
