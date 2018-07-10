@@ -71,6 +71,15 @@ RUN wget ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz.v2.0.4 -O /tmp/wgr
         make && \
 	ln -s /usr/local/grib2/grib2/wgrib2/wgrib2 /usr/local/bin/wgrib2
 
+RUN mkdir /usr/local/wgrib
+
+WORKDIR /usr/local/wgrib
+
+RUN wget ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib/wgrib.tar && \
+	tar xvf wgrib.tar && \
+	make && \
+	ln -s /usr/local/wgrib/wgrib /usr/local/bin
+
 RUN install2.r --error rNOMADS
 
 EXPOSE 8787
