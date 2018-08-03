@@ -16,4 +16,5 @@ RUN install2.r --error \
   colorspace \
   && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
-RUN R -e "devtools::install_github('earthlab/smapr')"
+RUN R -e "devtools::install_github('ropensci/smapr')"
+
