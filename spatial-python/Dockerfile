@@ -22,8 +22,8 @@ RUN conda install --yes -c conda-forge \
     'landsat_util' \
     'netcdf4' \
     'pandas' \
+    'pyhdf' \
     'pysal'
 
 RUN ipcluster nbextension enable --user
-
 
