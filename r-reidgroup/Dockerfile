@@ -2,6 +2,7 @@ FROM rocker/tidyverse:latest
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
+    fort77 \
     gdal-bin \
     lbzip2 \
     libfftw3-dev \
@@ -34,7 +35,6 @@ RUN install2.r --error \
     ggthemes \
     gstat \
     httr \
-    lidR \
     mapdata \
     maptools \
     mapview \
@@ -68,6 +68,9 @@ RUN wget ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2.tgz.v2.0.4 -O /tmp/wgr
         rm -r /tmp/wgrib2.tgz && \
         mv /tmp/grib2/ /usr/local/grib2/ &&\
         cd /usr/local/grib2/grib2 && \
+        sed -i '/USE_IPOLATES=0/c\USE_IPOLATES=1' makefile && \
+        cat makefile && \
+        export FC=gfortran && \
         make && \
 	ln -s /usr/local/grib2/grib2/wgrib2/wgrib2 /usr/local/bin/wgrib2
 
