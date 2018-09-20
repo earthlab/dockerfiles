@@ -10,7 +10,6 @@ RUN install2.r --error \
     doParallel \
     ggthemes \
     httr \
-    MODIS \
     rasterVis \
     RCurl \
     snowfall \
