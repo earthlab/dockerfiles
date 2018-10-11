@@ -11,19 +11,24 @@ RUN apt-get update && \
     
 USER $NB_USER
 
-RUN conda install --yes -c conda-forge \
-    'awscli' \
-    'basemap' \
-    'cartopy' \
-    'gdal' \
-    'geopandas' \
-    'h5py' \
-    'ipyparallel ' \
-    'landsat_util' \
-    'netcdf4' \
-    'pandas' \
-    'pyhdf' \
-    'pysal'
+
+
+RUN conda config --remove channels defaults && \
+  conda config --add channels conda-forge && \
+  conda install --yes -c conda-forge \
+    awscli \
+    basemap \
+    cartopy \
+    gdal \
+    geopandas \
+    h5py \
+    ipyparallel \
+    landsat_util \
+    ncurses \
+    netcdf4 \
+    pandas \
+    pyhdf \
+    pysal
 
 RUN ipcluster nbextension enable --user
 
