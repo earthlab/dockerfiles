@@ -39,9 +39,7 @@ RUN mkdir -p /home/rstudio/.R/ \
 
 RUN install2.r --error \
     assertthat \
-    corrplot \
     cowplot \
-    clusterGeneration \
     devtools \
     elevatr \
     extraDistr \
@@ -51,25 +49,15 @@ RUN install2.r --error \
     ggrepel \
     gridExtra \
     ggridges \    
-    HDInterval \
     hrbrthemes \
     loo \
     lubridate \
-    modeest \
     pbapply \
     purrr \ 
     RCurl \
     reshape2 \
     rmapshaper \
-    RSQLite \
-    rasterVis \
-    snowfall \
     viridis
-
-RUN apt-get install -y \
-	gdal-bin \
-	python-gdal \
-	python3-gdal
 
 RUN R -e "devtools::install_github('thomasp85/patchwork')"
 
