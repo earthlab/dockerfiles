@@ -34,7 +34,6 @@ RUN install2.r --error \
     ggthemes \
     gstat \
     httr \
-    lidR \
     mapdata \
     maptools \
     mapview \
