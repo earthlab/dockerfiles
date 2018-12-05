@@ -17,6 +17,7 @@ RUN apt-get update \
     libssh2-1-dev \
     libssl-dev \
     libudunits2-dev \
+    libv8-3.14-dev \
     python-pip \
     texlive-fonts-extra \
     texlive-latex-extra \
@@ -35,6 +36,7 @@ RUN install2.r --error \
     ggthemes \
     gstat \
     httr \
+    lutz \
     mapdata \
     maptools \
     mapview \
