@@ -43,7 +43,7 @@ RUN pip install virtualenv
 
 USER rstudio
 
-RUN R -e "tensorflow::install_tensorflow()"
+RUN R -e "tensorflow::install_tensorflow(extra_packages = 'tensorflow-probability')"
 
 USER root
 
