@@ -4,20 +4,14 @@ To interactively run the container:
 
 ## How to use
 
-To enter the container via bash:
+To use Rstudio:
 
 ```
-docker run -it earthlab/smapr bash
+docker run -e PASSWORD=yourpassword -d -p 8787:8787 earthlab/smapr
 ```
 
-To instead use the Rstudio interface:
-
-```
-docker run -d -p 8787:8787 earthlab/smapr
-```
-
-In a web browser, navigate to localhost:8787 (on linux) or on a Mac, substitute the location pointed to by `docker-machine ip default` for `localhost`.
-Log in with username: rstudio, password: rstudio.
+In a web browser, navigate to localhost:8787.
+Log in with username: rstudio, and the password your provided in your call to `docker run`.
 
 ## Example: saving a GeoTIFF to the local filesystem
 

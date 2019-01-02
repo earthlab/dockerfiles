@@ -4,21 +4,14 @@ Docker container with R, RStudio, tensorflow, and the R tensorflow package.
 
 ## How to use
 
-Download and run this image using the following commands:
-
-```
-docker pull earthlab/r-tensorflow
-docker run -i -t earthlab/r-tensorflow /bin/bash
-```    
-
 To use Rstudio:
 
 ```
-docker run -d -p 8787:8787 earthlab/r-tensorflow
+docker run -e PASSWORD=yourpassword -d -p 8787:8787 earthlab/r-tensorflow
 ```
 
-In a web browser, navigate to localhost:8787 (on linux) or on a Mac, substitute the location pointed to by `docker-machine ip default` for `localhost`.
-Log in with username: rstudio, password: rstudio.
+In a web browser, navigate to localhost:8787.
+Log in with username: rstudio, and the password your provided in your call to `docker run`.
 
 ## Mounting folders
 
