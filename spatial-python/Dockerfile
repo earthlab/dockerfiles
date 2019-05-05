@@ -23,7 +23,6 @@ RUN conda config --remove channels defaults && \
     geopandas \
     h5py \
     ipyparallel \
-    landsat_util \
     ncurses \
     netcdf4 \
     pandas \
@@ -31,4 +30,9 @@ RUN conda config --remove channels defaults && \
     pysal
 
 RUN ipcluster nbextension enable --user
+
+COPY test.ipynb test.ipynb
+
+RUN jupyter nbconvert --to notebook --execute test.ipynb && \
+    rm test*
 
