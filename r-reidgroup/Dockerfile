@@ -28,9 +28,12 @@ RUN install2.r --error \
     assertthat \
     RColorBrewer \
     RandomFields \
+    caret \
+    caretEnsemble \
     classInt \
     deldir \
     doParallel \
+    dplyr \
     geoR \
     geosphere \
     ggthemes \
