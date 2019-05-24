@@ -27,7 +27,8 @@ RUN conda config --remove channels defaults && \
     netcdf4 \
     pandas \
     pyhdf \
-    pysal
+    pysal \
+    xarray
 
 RUN ipcluster nbextension enable --user
 
