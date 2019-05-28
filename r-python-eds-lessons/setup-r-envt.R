@@ -5,8 +5,6 @@
 # last modified: April 2019
 ##################
 
-# should the dependencies be installed explicityl?
-# ‘backports’, ‘zeallot’, ‘glue’, ‘magrittr’, ‘stringi’, ‘colorspace’, ‘assertthat’, ‘utf8’, ‘vctrs’, ‘Rcpp’, ‘stringr’, ‘labeling’, ‘munsell’, ‘R6’, ‘RColorBrewer’, ‘cli’, ‘crayon’, ‘fansi’, ‘pillar’, ‘pkgconfig’, ‘digest’, ‘gtable’, ‘lazyeval’, ‘plyr’, ‘reshape2’, ‘rlang’, ‘scales’, ‘tibble’, ‘viridisLite’, ‘withr’
 packages <- c("ggplot2", "dplyr", "RJSONIO",
               "ggmap", "raster", "rgdal", "rtweet", "widyr",
               "knitr", "rmarkdown", "dplyr", "stringr", "RSAGA",
