@@ -1,8 +1,7 @@
 ##################
-
-# This code installed the needed R packages into the build environment
-# Author: Leah A. Wasser, Gina L. Li
-# last modified: April 2019
+# This code installs the needed R packages into the build environment
+# Author: Leah A. Wasser, Gina L. Li, Joseph V. Tuccillo
+# last modified: May 2019
 ##################
 
 packages <- c("ggplot2", "dplyr", "RJSONIO",
@@ -13,7 +12,7 @@ packages <- c("ggplot2", "dplyr", "RJSONIO",
 
 for (package in packages) {
   if (!package %in% rownames(installed.packages())) {
-    print("need to install a package")
+    cat("Installing package", package, '\n\n')
     install.packages(package, repos = "http://cran.us.r-project.org")
   }
 }

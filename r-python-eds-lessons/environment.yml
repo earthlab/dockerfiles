@@ -40,14 +40,14 @@ dependencies:
   # Jupyter Environment
   - notebook
   - ipython
-  
+
   - pip:
       # Utilities
-      - download
-      - nbgrader
+      # - download
+      # - nbgrader
       - nbclean
       - mne
-      - tqdm
+      # - tqdm
       - kiwisolver
       # more ea stuff
       - mapboxgl
@@ -58,4 +58,3 @@ dependencies:
       - climata
       - elevation
       - richdem
-

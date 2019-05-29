@@ -16,3 +16,7 @@ RUN apt-get -y install r-base-core && \
 COPY setup-r-envt.R setup-r-envt.R
 
 RUN Rscript setup-r-envt.R
+
+COPY import_check.py import_check.py
+
+RUN python import_check.py
