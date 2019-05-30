@@ -1,22 +1,36 @@
 FROM continuumio/anaconda3
 
+RUN conda update -n base -c defaults conda
+
+RUN conda config --add channels conda-forge
+
 COPY environment.yml environment.yml
 
-RUN conda env update --quiet -f environment.yml && \
-  conda clean -tipsy
+# RUN [ -e environment.yml ] && conda env update --quiet -f environment.yml
 
-RUN apt-get -y install r-base-core && \
-    apt-get -y install libgdal-dev && \
-    apt-get -y install libssl-dev && \
-    apt-get -y install libcurl4-openssl-dev && \
-    apt-get -y install libudunits2-dev && \
-    apt-get -y install libgeos-dev && \
-    apt-get -y install libproj-dev
+RUN conda env create -f environment.yml
 
-COPY setup-r-envt.R setup-r-envt.R
+RUN echo "source activate eds-lessons" > ~/.bashrc
+ENV PATH /opt/conda/envs/env/bin:$PATH
 
-RUN Rscript setup-r-envt.R
+# RUN conda list
+
+RUN conda clean -tipsy
+
+# RUN apt-get -y install r-base-core && \
+#     apt-get -y install libgdal-dev && \
+#     apt-get -y install libssl-dev && \
+#     apt-get -y install libcurl4-openssl-dev && \
+#     apt-get -y install libudunits2-dev && \
+#     apt-get -y install libgeos-dev && \
+#     apt-get -y install libproj-dev
+
+# COPY setup-r-envt.R setup-r-envt.R
+
+# RUN Rscript setup-r-envt.R
 
 COPY import_check.py import_check.py
 
 RUN python import_check.py
+
+# RUN ["python ~/import_check.py"]
