@@ -7,8 +7,10 @@ dependencies:
   # Core scientific python
   - numpy
   - matplotlib
+  - pip
   - python=3.6
   - pyqt
+  - scikit-learn
   - seaborn
 
   # extentions
@@ -20,6 +22,7 @@ dependencies:
   - cartopy
   - geopandas
   - rasterio
+  - libiconv
   - contextily
   - pysal
   - pyproj
@@ -46,12 +49,11 @@ dependencies:
       # - download
       # - nbgrader
       - nbclean
-      - mne
+      # - mne
       # - tqdm
-      - kiwisolver
+      # - kiwisolver
       # more ea stuff
       - mapboxgl
-      - sklearn
       - hydrofunctions
       # tutorials
       - cenpy
