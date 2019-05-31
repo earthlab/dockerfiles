@@ -5,7 +5,6 @@ import folium
 
 # pip installaed libraries
 import nbclean
-import mne
 import kiwisolver
 import mapboxgl
 import hydrofunctions

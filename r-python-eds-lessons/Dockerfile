@@ -1,19 +1,12 @@
 FROM continuumio/anaconda3
 
-RUN conda update -n base -c defaults conda
-
-RUN conda config --add channels conda-forge
-
 COPY environment.yml environment.yml
 
-# RUN [ -e environment.yml ] && conda env update --quiet -f environment.yml
+RUN conda update -n base -c defaults conda
 
-RUN conda env create -f environment.yml
+RUN conda env update -n root -f environment.yml
 
-RUN echo "source activate eds-lessons" > ~/.bashrc
-ENV PATH /opt/conda/envs/env/bin:$PATH
-
-# RUN conda list
+RUN conda list
 
 RUN conda clean -tipsy
 
