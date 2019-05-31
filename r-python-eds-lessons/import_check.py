@@ -1,11 +1,10 @@
-# libraries with many dependencies
+# libraries with many conda-installed dependencies
 import earthpy
 import rasterio
 import folium
 
 # pip installaed libraries
 import nbclean
-import kiwisolver
 import mapboxgl
 import hydrofunctions
 import cenpy
