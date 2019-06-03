@@ -4,12 +4,11 @@
 # last modified: May 2019
 ##################
 
-# packages <- c("ggplot2", "dplyr", "RJSONIO",
-#               "ggmap", "raster", "rgdal", "rtweet", "widyr",
-#               "knitr", "rmarkdown", "dplyr", "stringr", "RSAGA",
-#               "ggmap", "maps", "sf", "rasterVis", "knitr","rmarkdown",
-#               "RSAGA", "ff")
-packages = c('rgdal', 'sf', 'RSAGA')
+packages <- c("ggplot2", "dplyr", "RJSONIO",
+              "ggmap", "raster", "rgdal", "rtweet", "widyr",
+              "knitr", "rmarkdown", "dplyr", "stringr", "RSAGA",
+              "ggmap", "maps", "sf", "rasterVis", "knitr","rmarkdown",
+              "RSAGA", "ff")
 
 for (package in packages) {
   if (!package %in% rownames(installed.packages())) {
