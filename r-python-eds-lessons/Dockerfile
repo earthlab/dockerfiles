@@ -1,15 +1,5 @@
 FROM continuumio/anaconda3
 
-COPY environment.yml environment.yml
-
-RUN conda update -n base -c defaults conda
-
-RUN conda env update -n root -f environment.yml
-
-RUN conda list
-
-RUN conda clean -tipsy
-
 RUN apt-get -y install r-base-core && \
     apt-get -y install libgdal-dev && \
     apt-get -y install libssl-dev && \
@@ -21,6 +11,16 @@ RUN apt-get -y install r-base-core && \
 COPY setup-r-envt.R setup-r-envt.R
 
 RUN Rscript setup-r-envt.R
+
+COPY environment.yml environment.yml
+
+RUN conda update -n base -c defaults conda
+
+RUN conda env update -n root -f environment.yml
+
+RUN conda list
+
+RUN conda clean -tipsy
 
 COPY import_check.py import_check.py
 
