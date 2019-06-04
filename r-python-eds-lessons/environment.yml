@@ -44,22 +44,11 @@ dependencies:
   - notebook
   - ipython
 
-  # # r libraries - TEST
-  # - r-base
-  # - r-rgdal
-
   - pip:
       # Utilities
-      # - download
-      # - nbgrader
       - nbclean
-      # - mne
-      # - tqdm
-      # - kiwisolver
-      # more ea stuff
       - mapboxgl
       - hydrofunctions
-      # tutorials
       - cenpy
       - climata
       - elevation
