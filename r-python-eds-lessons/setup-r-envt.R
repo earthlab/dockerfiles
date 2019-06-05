@@ -1,15 +1,22 @@
-##################
-# This code installs the needed R packages into the build environment
-# Author: Leah A. Wasser, Gina L. Li, Joseph V. Tuccillo
-# last modified: May 2019
-##################
+# packages to install
+packages <- c("dplyr",
+              "ff",
+              "ggplot2",
+              "ggmap",
+              "knitr",
+              "maps",
+              "raster",
+              "rasterVis",
+              "rgdal",
+              "RJSONIO",
+              "rmarkdown",
+              "RSAGA",
+              "rtweet",
+              "sf",
+              "stringr",
+              "widyr")
 
-packages <- c("ggplot2", "dplyr", "RJSONIO",
-              "ggmap", "raster", "rgdal", "rtweet", "widyr",
-              "knitr", "rmarkdown", "dplyr", "stringr", "RSAGA",
-              "ggmap", "maps", "sf", "rasterVis", "knitr","rmarkdown",
-              "RSAGA", "ff")
-
+# iterate packages and install by name
 for (package in packages) {
   if (!package %in% rownames(installed.packages())) {
     cat("Installing package", package, '\n\n')

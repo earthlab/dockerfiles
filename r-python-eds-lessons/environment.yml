@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - papermill
+  - pip=19.0.3
 
   # Core scientific python
   - numpy
@@ -17,39 +18,39 @@ dependencies:
   - autopep8
 
   # Geo stuff
-  - rasterstats
-  - geopy
+  - basemap
   - cartopy
-  - geopandas
-  - rasterio
-  - libiconv
   - contextily
-  - pysal
-  - pyproj
+  - earthpy
   - folium
-  - scikit-image
   - gdal
-  - libgdal
   - geocoder
   - geojson
-  - basemap
+  - geopandas
+  - geopy
+  - libgdal
+  - libiconv
+  - pyproj
+  - pysal
+  - rasterio
+  - rasterstats
+  - scikit-image
   - shapely
-  - earthpy
 
   # natural language processing
-  - tweepy
   - nltk
+  - tweepy
 
   # Jupyter Environment
-  - notebook
   - ipython
+  - notebook
 
   - pip:
       # Utilities
-      - nbclean
-      - mapboxgl
-      - hydrofunctions
       - cenpy
       - climata
       - elevation
+      - hydrofunctions
+      - mapboxgl
+      - nbclean
       - richdem

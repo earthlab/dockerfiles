@@ -1,12 +1,14 @@
 FROM continuumio/anaconda3
 
-RUN apt-get -y install r-base-core && \
-    apt-get -y install libgdal-dev && \
-    apt-get -y install libssl-dev && \
-    apt-get -y install libcurl4-openssl-dev && \
-    apt-get -y install libudunits2-dev && \
-    apt-get -y install libgeos-dev && \
-    apt-get -y install libproj-dev
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+    libcurl4-openssl-dev  \
+    libgeos-dev  \
+    libgdal-dev  \
+    libproj-dev \
+    libssl-dev  \
+    libudunits2-dev  \
+    r-base-core
 
 COPY setup-r-envt.R setup-r-envt.R
 
