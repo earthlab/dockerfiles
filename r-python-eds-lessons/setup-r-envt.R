@@ -15,7 +15,7 @@ packages <- c("dplyr",
               "sf",
               "stringr",
               "widyr")
-
+              
 # iterate packages and install by name
 for (package in packages) {
   if (!package %in% rownames(installed.packages())) {
