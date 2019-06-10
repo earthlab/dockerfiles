@@ -15,6 +15,10 @@ FROM continuumio/anaconda3
 #
 # RUN Rscript setup-r-envt.R
 
+RUN conda config --add channels conda-forge
+
+RUN conda config --set channel_priority strict
+
 COPY environment.yml environment.yml
 
 RUN conda update -n base -c defaults conda
