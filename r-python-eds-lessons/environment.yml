@@ -2,55 +2,46 @@ name: eds-lessons
 channels:
   - conda-forge
 dependencies:
-  - papermill
+  - papermill=1.0.1
   - pip=19.0.3
 
   # Core scientific python
-  - numpy
-  - matplotlib
-  - pip
   - python=3.6
-  - pyqt
-  - scikit-learn
-  - seaborn
+  - pyqt=5.9.2
+  - scikit-learn=0.21.2
 
   # extentions
-  - autopep8
+  - autopep8=1.4.4
 
   # Geo stuff
-  - basemap
-  - cartopy
-  - contextily
-  - earthpy
-  - folium
-  - gdal
-  - geocoder
-  - geojson
-  - geopandas
-  - geopy
-  - libgdal
-  - libiconv
-  - pyproj
-  - pysal
-  - rasterio
-  - rasterstats
-  - scikit-image
-  - shapely
+  - basemap=1.2.0
+  - cartopy=0.17.0
+  - contextily=1.0
+  - earthpy=0.6.8
+  - folium=0.9.1
+  - gdal=3.0.0
+  - geocoder=1.38.1
+  - geojson=2.4.1
+  - geopandas=0.5.0
+  - geopy=1.20.0
+  - libgdal=3.0.0
+  - libiconv=1.15
+  - pyproj=2.2.0
+  - pysal=2.0.0
+  - rasterio=1.0.24
+  - rasterstats=0.13.1
+  - scikit-image=0.15.0
+  - shapely=1.6.4
 
   # natural language processing
-  - nltk
-  - tweepy
-
-  # Jupyter Environment
-  - ipython
-  - notebook
+  - nltk=3.2.5
+  - tweepy=3.6.0
 
   - pip:
       # Utilities
-      - cenpy
-      - climata
-      - elevation
-      - hydrofunctions
-      - mapboxgl
-      - nbclean
-      - richdem
+      - cenpy=0.9.9
+      - climata=0.5.0
+      - elevation=1.0.6
+      - hydrofunctions=0.1.7
+      - mapboxgl=0.10.2
+      - richdem=0.3.4

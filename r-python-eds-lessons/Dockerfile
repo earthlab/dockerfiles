@@ -1,19 +1,19 @@
 FROM continuumio/anaconda3
 
-RUN apt-get update \
-  && apt-get install -y \
-    build-essential \
-    libcurl4-openssl-dev  \
-    libgeos-dev  \
-    libgdal-dev  \
-    libproj-dev \
-    libssl-dev  \
-    libudunits2-dev  \
-    r-base-core
-
-COPY setup-r-envt.R setup-r-envt.R
-
-RUN Rscript setup-r-envt.R
+# RUN apt-get update \
+#   && apt-get install -y \
+#     build-essential \
+#     libcurl4-openssl-dev  \
+#     libgeos-dev  \
+#     libgdal-dev  \
+#     libproj-dev \
+#     libssl-dev  \
+#     libudunits2-dev  \
+#     r-base-core
+#
+# COPY setup-r-envt.R setup-r-envt.R
+#
+# RUN Rscript setup-r-envt.R
 
 COPY environment.yml environment.yml
 
