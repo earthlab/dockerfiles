@@ -15,33 +15,33 @@ dependencies:
 
   # Geo stuff
   - basemap=1.2.0
-  - cartopy=0.17.0
+  - cartopy
   - contextily=1.0
   - earthpy=0.6.8
   - folium=0.9.1
-  - gdal=3.0.0
+  - gdal
   - geocoder=1.38.1
   - geojson=2.4.1
   - geopandas=0.5.0
   - geopy=1.20.0
-  - libgdal=3.0.0
+  - libgdal
   - libiconv=1.15
-  - pyproj=2.2.0
+  - pyproj
   - pysal=2.0.0
-  - rasterio=1.0.24
-  - rasterstats=0.13.1
+  - rasterio
+  - rasterstats
   - scikit-image=0.15.0
   - shapely=1.6.4
 
   # natural language processing
   - nltk=3.2.5
-  - tweepy=3.6.0
+  - tweepy=3.5
 
   - pip:
       # Utilities
-      - cenpy=0.9.9
-      - climata=0.5.0
-      - elevation=1.0.6
-      - hydrofunctions=0.1.7
-      - mapboxgl=0.10.2
-      - richdem=0.3.4
+      - cenpy
+      - climata
+      - elevation
+      - hydrofunctions
+      - mapboxgl
+      - richdem
