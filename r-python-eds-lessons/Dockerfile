@@ -15,6 +15,10 @@ COPY setup-r-envt.R setup-r-envt.R
 
 RUN Rscript setup-r-envt.R
 
+RUN conda config --add channels conda-forge
+
+RUN conda config --set channel_priority strict
+
 COPY environment.yml environment.yml
 
 RUN conda update -n base -c defaults conda
