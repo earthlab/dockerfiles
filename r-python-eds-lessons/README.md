@@ -1,3 +1,6 @@
+[![](https://images.microbadger.com/badges/image/earthlab/r-python-eds-lessons.svg)](https://microbadger.com/images/earthlab/r-python-eds-lessons "build specs")
+[![](https://images.microbadger.com/badges/version/earthlab/r-python-eds-lessons.svg)](https://microbadger.com/images/earthlab/r-python-eds-lessons "Version")
+
 # r-python-eds-lessons
 
 Docker container with [Anaconda 3](http://continuum.io/downloads) and R that builds lessons for the [Earth Data Science website](http://www.earthdatascience.org).
