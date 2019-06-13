@@ -6,7 +6,7 @@ dependencies:
   - pip=19.0.3
 
   # Core scientific python
-  - python=3.6
+  - python=3.7
   - pyqt=5.9.2
   - scikit-learn=0.21.2
 
@@ -35,7 +35,7 @@ dependencies:
 
   # natural language processing
   - nltk=3.2.5
-  - tweepy=3.5
+  - tweepy=3.7
 
   - pip:
       # Utilities
@@ -44,4 +44,5 @@ dependencies:
       - elevation
       - hydrofunctions
       - mapboxgl
+      - nbclean
       - richdem

@@ -3,19 +3,22 @@ packages <- c("dplyr",
               "ff",
               "ggplot2",
               "ggmap",
+              "gridExtra",
               "knitr",
               "maps",
               "raster",
               "rasterVis",
               "rgdal",
+              "rgeos",
               "RJSONIO",
               "rmarkdown",
               "RSAGA",
               "rtweet",
               "sf",
+              # 'tm',
               "stringr",
               "widyr")
-              
+
 # iterate packages and install by name
 for (package in packages) {
   if (!package %in% rownames(installed.packages())) {
