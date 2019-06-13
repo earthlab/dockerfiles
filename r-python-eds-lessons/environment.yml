@@ -44,4 +44,5 @@ dependencies:
       - elevation
       - hydrofunctions
       - mapboxgl
+      - nbclean
       - richdem
