@@ -9,7 +9,8 @@ RUN apt-get update \
     libproj-dev \
     libssl-dev  \
     libudunits2-dev  \
-    r-base-core
+    r-base-core \
+    nano
 
 COPY setup-r-envt.R setup-r-envt.R
 
