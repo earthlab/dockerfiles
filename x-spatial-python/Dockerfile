@@ -55,6 +55,8 @@ RUN conda config --remove channels defaults && \
     xarray-simlab \
     satpy         \
     earthpy \
+    descartes \
+    pysal \
     pip
 
 RUN pip install xshape
