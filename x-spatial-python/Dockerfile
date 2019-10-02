@@ -57,6 +57,8 @@ RUN conda config --remove channels defaults && \
     earthpy \
     descartes \
     pysal \
+    contextily \
+    spectral \
     pip
 
 RUN pip install xshape
