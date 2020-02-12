@@ -2,7 +2,7 @@ FROM rocker/rstudio
 
 MAINTAINER "Maxwell Joseph" maxwell.b.joseph@colorado.edu
 
-# from the tensorflow dockerfile: 
+# from the tensorflow dockerfile:
 # https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/Dockerfile
 
 # Pick up some TF dependencies
@@ -35,9 +35,9 @@ RUN pip --no-cache-dir install \
     python -m ipykernel.kernelspec
 
 RUN install2.r --error \
-    devtools
-    
-RUN R -e "devtools::install_github('rstudio/tensorflow')"
+    remotes
+
+RUN R -e "remotes::install_github('rstudio/tensorflow')"
 
 RUN pip install virtualenv
 
@@ -46,4 +46,3 @@ USER rstudio
 RUN R -e "tensorflow::install_tensorflow(extra_packages = 'tensorflow-probability')"
 
 USER root
-
